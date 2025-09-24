@@ -1,0 +1,48 @@
+.btn{
+    padding: 10px;
+    background-color: #00ff40cb;
+    border-radius: 5px;
+    border-color: #00ff40cb;
+    color: white;
+}
+
+.age{
+    padding: 10px;
+    background-color: #00ff40cb;
+    border-radius: 5px;
+    border-color: #00ff40cb;
+    color: white;
+}
+
+
+.heady {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: rgb(58, 222, 32);
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.information {
+    margin-top: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    font-weight: light;
+    border: 2px solid #00ff40cb;;
+}
+
+.btn:hover {
+        background-color: #00ff40cb;
+    }
+.age:hover {
+        background-color: #00ff40cb;
+    }
+
+.main_buttons{
+    display: flex;
+    gap: 30px;
+}
