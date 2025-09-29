@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array Basics - Shopping List</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="mx-auto col-8 rounded-3 shadow my-3 p-3">
+        <div class="text-center">
+            <h3 class="fs-1">Practice Exercise 1</h3>
+            <h3 class="fs-2">Array Basic - Shopping List</h3>
+
+        </div>
+        <button class="btn btn-secondary my-3" onclick="formatList()" type="button">
+            Shopping List
+        </button>
+        <div class="mx-auto col-10 my-3">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>S/N</th>
+                        <th>Items</th>
+                    </tr>
+                </thead>
+                <tbody id="display-shoppingList"></tbody>
+            </table>
+        </div>
+    </div>
+    <div>
+
+        <script>
+            <!-- Main function -->
+            function formatList() {
+                shoppingList = ["apple", "banana", "orange", "grape"];
+
+                // List of items in my store
+                console.log("Original list:", shoppingList); //Show my store
+
+                shoppingList.push("milk"); // Add one item here
+                console.log("After adding items:", shoppingList); // Add one item here
+
+                // Removing the first item from the list
+                let firstItem = shoppingList.shift(); console.log("Removed first item:", firstItem);
+
+                // Display the total number of items
+                console.log("Total number of items is ", shoppingList.length);
+
+                // Loop through the list and print each item with its position
+
+                for (let i = 0; i < shoppingList.length; i++) {
+                    console.log(`${i + 1} is ${shoppingList[i]}`);
+                    document.getElementById("display-shoppingList").innerHTML += ` <td>${i + 1}</id>
+            <td>${shoppingList[i]}</td>`;
+                }
+            }
+
+
+
+        </script>
+</body>
+
+</html>

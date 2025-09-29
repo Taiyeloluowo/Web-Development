@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Ratings System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="mx-auto col-12 rounded-3 shadow my-3 p-3">
+        <div class="text-center">
+            <h3 class="fs-1">Practice Exercise 3</h3>
+            <h3 class="fs-5">Movie Ratings System</h3>
+        </div>
+        <div>
+            <button onclick="printSummary()">Print summary</button>
+            <button onclick="sortMovies()">Sort movies</button>
+
+        </div>
+
+
+    </div>
+    <div>
+
+
+
+        <script>
+            <!-- arrays to store Movies and Rating code -->
+            let movies = [];
+            let ratings = [];
+
+            // function to add a New Movie and Rating
+            function addMovie(movie, rating) {
+                movies.push(movie);
+                ratings.push(rating);
+            }
+
+            // function to calculate the average rating code
+            function getAverageRating() {
+                if (ratings.length === 0) {
+                    console.log("My code will returened back")
+                    return 0
+                }
+                let sum = 0;
+                for (let a = 0; a < ratings.length; a++) { sum = sum + ratings[a]; } 
+                return (sum / ratings.length).toFixed(2);
+            } 
+            
+            // function to get the Hightest Rated Movie
+            function getTopMovie() { 
+                if (ratings.length===0) {
+                    console.log("No movies added yet!"); 
+                    return "No movies added yet!"; 
+                } 
+                let maxTop = 0; 
+                for (let h = 1; h < ratings.length; h++) {
+                    if (ratings[h] > ratings[maxTop]) {
+                        maxTop = h;
+                    }
+                }
+                return `${movies[maxTop]} (Rating: ${ratings[maxTop]})`;
+            }
+
+            // function to Print a summary of all movies with their rating
+            function printSummary() {
+                console.log("Summary of all movies with their rating");
+                for (let p = 0; p < movies.length; p++) { 
+                    console.log(`${movies[p]} | ${ratings[p]}`); 
+                }
+                console.log(`Average Rating of movie is ${getAverageRating()}`); 
+                console.log(`Top movie is ${getTopMovie()} `);
+
+            } 
+            
+            // This is the code of lines to sort movies by rating
+            function sortMovies() {
+                let show = movies.map((movie, s) => ({
+                movie: movie,
+                rating: ratings[s],
+                }));
+
+                show.sort((x, y) => x.rating - y.rating);
+
+                console.log("Sort the movies by rating (highest to lowest: ")
+                show.forEach((sortItem) => {
+                console.log(`${sortItem.movie} | ${sortItem.rating}`);
+                });
+            }
+
+            addMovie("Jagun Jagun", 87);
+            addMovie("King of Thieves", 67);
+            addMovie("Beast of two Worlds", 81);
+            addMovie("Atugba", 74);
+            addMovie("Kesari", 91);
+            addMovie("Ori", 95);
+
+
+
+
+        </script>
+</body>
+
+</html>

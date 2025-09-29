@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Membership System</title>
+</head>
+
+<body>
+
+    <div>
+        <button onclick="member.borrowBook('Magic Memory')">Borrowed Book 1</button>
+        <button onclick="member.borrowBook('Front Row Life');">Borrowed Book 2</button>
+        <button onclick=" member.getMembershipInfo()">Membership Info</button>
+
+
+    </div>
+
+    <script>
+        let member = {
+            name: "Taiye",
+            membershipType: "basic",
+            borrowedBooks: [],
+            borrowBook(book) {
+                member.borrowedBooks.push(book);
+                console.log(`The book ${book} has been added.`)
+            },
+
+            getBorrowedCount() {
+                num = borrowedBooks.length;
+                console.log(`${member.name} has borrowed ${num} books.`);
+
+            },
+
+            getMembershipInfo() {
+                if (member.membershipType === "premium") {
+                    console.log("This user has a premium badge and can borrow up to 10 books at a time!")
+                } else {
+                    console.log("You have a basic account and you can only borrow a maximum of 5 books.")
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

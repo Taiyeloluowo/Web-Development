@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>McProlific — Frontend Developer Portfolio</title>
+  </head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+
+
+  <body
+    style="
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto,
+        'Helvetica Neue', Arial;
+      margin: 0;
+      background: #f4f6f8;
+      color: #1f2937;
+      line-height: 1.5;
+    "
+  >
+    <!-- SITE HEADER -->
+    <header
+      role="head"
+      style="background: white; color: black; padding: 8px 18px;"
+    >
+      <div
+        style="
+          max-width: 1100px;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 16px;
+        "
+      >
+        <div style="display: flex; align-items: center; gap: 12px">
+          <img
+            src="./Assets/IMG-20240208-WA0000.jpg"
+            alt="This is my image by McProlific Solutions"
+            width="55"
+            height="55"
+            style="border-radius: 7px; object-fit:cover;"
+          />
+          <div>
+            <h1 style="font-size: 20px; margin: 0; font-family: Kaushan;">McProlific</h1>
+            <p style="margin: 2px 0 0; font-size: 13px; color: black">
+             <marquee> Frontend AI Developer from NCC</marquee>
+            </p>
+          </div>
+        </div>
+
+        <!-- Accessible Navigation -->
+        <nav 
+          aria-label="Primary"
+          style="display: flex; gap: 14px; align-items: center; 
+          /* border: 3px solid blanchedalmond; */
+          "
+        >
+          <a
+            href="#About" 
+            style="
+              color: black;
+              text-decoration: none;
+              font-weight: 500;
+              padding: 6px 12px;
+              border: 2px solid blue;
+              border-radius: 6px;
+              
+            "
+            
+            aria-current="page"
+            >About</a
+          >
+          <a
+            href="#projects"
+            style="color: black; text-decoration: none; font-weight: 500; padding: 6px 12px;
+              border: 2px solid blue;
+              border-radius: 6px"
+            >Projects</a
+          >
+          <a
+            href="#skills"
+            style="color: black; text-decoration: none; font-weight: 500; padding: 6px 12px;
+              border: 2px solid blue;
+              border-radius: 6px"
+            >Skills</a
+          >
+          <a
+            href="#contact"
+            style="
+              color: #fff;
+              background: #2563eb;
+              text-decoration: none;
+              font-weight: 500;
+              padding: 8px 12px;
+              border-radius: 6px;
+            "
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section
+      id="home"
+      aria-label="Introduction"
+      style="max-width: 1100px; margin: 28px auto; padding: 20px; "
+    >
+      <div
+        style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap"
+      >
+        <div style="flex: 1 1 320px; min-width: 100%">
+          <h2 style="font-size: 28px; margin: 0 0 8px">
+            Hi - I'm Saka Idris Ajayi, I build accessible, responsive interfaces.
+          </h2>
+          <p style="margin: 12px; color: #374151; width: 100%; text-align: justify;">
+            I enjoy working with computers and learning how to use them in programming, auditing, detecting fraud in accounts, and developing websites & applications. I also study Computer Software Development and Graphics Technology, so I have a wide spread of knowledge in the tech field.
+          </p>
+          <p style="margin: 0">
+            <a
+              href="#contact"
+              style="
+                display: inline-block;
+                background: blue;
+                color: #fff;
+                font-weight: 500;
+                padding: 10px 14px;
+                border-radius: 6px;
+                text-decoration: none;
+              "
+              >Get in touch</a
+            >
+          </p>
+        </div>
+
+        <div style="width: 200px; min-width: 150px">
+          <img
+            src="https://via.placeholder.com/200x200"
+            alt=""
+            style="
+              width: 100%;
+              border-radius: 12px;
+              display: block;
+              box-shadow: 0 8px 18px rgba(15, 23, 36, 0.12);
+            "
+          />
+        </div>
+      </div>
+    </section>
+
+    <main
+      id="main"
+      style="max-width: 1100px; margin: 0 auto; padding: 0 20px 40px"
+    >
+      <!-- ABOUT (article with structure) -->
+      <article
+        id="about"
+        aria-labelledby="about-heading"
+        style="
+          background: #fff;
+          border-radius: 10px;
+          padding: 20px;
+          box-shadow: 0 6px 18px rgba(15, 23, 36, 0.06);
+          margin-bottom: 20px;
+        "
+      >
+        <header>
+          <h2 id="about-heading" style="font-size: 2.3rem; margin: 0 0 6px; color: #000;;">
+            About
+          </h2>
+          <p style="margin: 0 0 12px; color: #4b5563">
+            Get high-quality, efficient, and reliable coding solutions for your projects!
+          </p>
+        </header>
+
+        <section aria-labelledby="exp-heading" style="margin-bottom: 12px">
+          <h3 id="exp-heading" style="font-size: 16px; margin: 0 0 8px; color: #000;;">
+            Experience & Approach
+          </h3>
+          <p style="margin: 0 0 8px; text-align: justify;">
+            5+ years building accessible frontend and backend experiences for startups and
+            educational platforms. I prioritize semantic markup, keyboard
+            navigation, and performance. I enjoy turning design systems into
+            production-ready components.
+          </p>
+        </section>
+
+        <section aria-labelledby="tools-heading">
+          <h3 style="font-size: 2.0rem; margin: 0 0 8px; color: #000;; text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">
+            Main Tools & Technologies
+          </h3>
+          <fieldset>
+            <legend style="color: blue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 30px;">Frontend (Client-Side)</legend>
+            <p>This is everything the user sees and interacts with in a web application.</p>
+            <ul style="margin: 0px; padding-left: 20px; color: black">
+            <li style="color: blue;">Languages</li>
+            <ul>
+              <li>HTML (structure)</li>
+              <li>CSS (styling)</li>
+              <li>JavaScript (interactivity)</li>
+            </ul>
+            <li style="color: blue;">Frameworks & Libraries</li>
+            <ul>
+              <li>React.js, Augular, Vue.js (for building dynamic UIs)</li>
+              <li>Tailwind CSS, Bootstrap (for responsive design)</li>
+            </ul>
+            <li style="color: blue;">Build Tools</li>
+            <ul>
+              <li>Webpack, Vite, Parcel (bundlers)</li>
+              <li>Babel (transpiler for modern JS)</li>
+            </ul>
+            <li style="color: blue;">Version Control</li>
+            <ul>
+              <li>Git + GitHub/GitLab/Bitbucket</li>
+            </ul>
+
+          </ul>
+          </fieldset>
+          <fieldset>
+            <legend style="color: blue; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 30px;">Frontend (Server-Side)</legend>
+            <p style="color: black; margin: 0px; padding-left: 0px;">This is the hidden part that powers the frontend - habdling logic, data authentication, etc.</p>
+            <ul style="margin: 0px; padding-left: 20px; color: black">
+              <li style="color: blue;">Languages</li>
+              <ul>
+                <li>JavaScript (Node.js), Python (Django, Flask, FastAPI), PHP (Leravel, CodeIgniter), Java (Spring Boot), Ruby (Rails), C# (.NET)</li>
+              </ul>
+              <li style="color: blue;">Databases</li>
+              <ul>
+                <li>SQL: MySQL, PostgreSQL, Oracle</li>
+                <li>NoSQL: MongoDB, Firebase, Cassandra</li>
+              </ul>
+              <li style="color: blue;">Servers & Frameworks</li>
+              <ul>
+                <li>Node.js</li>
+                <li>Django / Flask (Python)</li>
+                <li>Laravel (PHP)</li>
+                <li>Spring Boot (Java)</li>
+              </ul>
+              <li style="color: blue;">APIs</li>
+              <ul>
+                <li>RESTful APIs</li>
+                <li>GraphQL</li>
+              </ul>
+              <li style="color: blue;">Other Tools</li>
+              <li>Docker (containerization)</li>
+              <li>Nginx / Apaches (web servers)</li>
+              <li>Cloud services (AWS, Azure, Google Cloud)</li>
+            </ul>
+          </fieldset>
+
+        </section>
+        <section>
+          <h3 style="color: black;">Benefits</h3>
+          <ul style="text-align: justify;">
+            <li><b style="color: blue;">High-quality code: </b> Well-structured, readable, and maintainable code.</li>
+            <li><b style="color: blue;">Fast turnaround: </b> Quick delivery of projects without compromising quality.</li>
+            <li><b style="color: blue;">Reliable support: </b> Ongoing support and maintenance for your projects.</li>
+            <li><b style="color: blue;">Competitive pricing: </b> Affordable rates without sacrificing quality.</li>
+
+          </ul>
+        </section>
+      </article>
+
+      <!-- PROJECTS (gallery with figures) -->
+      <section
+        id="projects"
+        aria-labelledby="projects-heading"
+        style="margin-bottom: 20px"
+      >
+        <h2 id="projects-heading" style="font-size: 1.5rem; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  margin: 0 0 12px;">
+          Sample Selected Projects
+        </h2>
+
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+          "
+        >
+          <!-- Project 1 -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/Sample about.png"
+              alt="This is my sample about work in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample About Work</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 14px">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./practice_1.html" style="text-decoration: none; color: blue" 
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- ==== Project 2 === -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/List 5 Programming Languages.png"
+              alt="This is my sample list work in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample List</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 15px;">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./practice_2.html" style="text-decoration: none; color: blue"
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- ===== Project 3 ===== -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/NCC Food Seller.png"
+              alt="This is my sample food seller in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample Food Seller</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 15px">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./practice_3.html" style="text-decoration: none; color: blue"
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+                    <!-- Project 4 -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/Student Registration.png"
+              alt="This is my sample student registration in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample Student Registration</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 14px">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./practice_4.html" style="text-decoration: none; color: blue"
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+          <!-- Project 5 -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/Sample Multimedia Portfolio.png"
+              alt="This is my sample multimedia work in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample Multimedia</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 14px">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./practice_5.html" style="text-decoration: none; color: blue"
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+                    <!-- Project 6 -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/Sample Contact.png"
+              alt="This is my sample contact work in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample Contact Form</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 14px">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./practice_6.html" style="text-decoration: none; color: blue"
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+                    <!-- Project 7 -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/Sample Blog-Post.png"
+              alt="This is my sample blog post work in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample NCC Blog</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 14px">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./exercise 7.html" style="text-decoration: none; color: blue"
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+                    <!-- Project 4 -->
+          <figure
+            style="
+              background: lightcyan;
+              padding: 12px;
+              border-radius: 10px;
+              box-shadow: 0 6px 4px lightblue;
+              margin: 0;
+            "
+          >
+            <img
+              src="./Assets/NCC About.png"
+              alt="This is my sample main about work in NCC"
+              style="width: 100%; border-radius: 8px; display: block"
+            />
+            <figcaption style="margin-top: 8px">
+              <strong>Sample Student Registration</strong>
+              <p style="margin: 6px 0 0; color: #333; font-size: 14px">
+                
+              </p>
+              <p style="margin: 8px 0 0">
+                <a href="./exercise 8.html" style="text-decoration: none; color: blue"
+                  >View project</a
+                >
+              </p>
+            </figcaption>
+          </figure>
+
+        </div>
+      </section>
+
+      
+      <!-- =======TWO-COLUMN: This advance SCC work 
+       I use this GRID to divide it into two =========-->
+      <div
+        style="
+          display: grid;
+          grid-template-columns: 1fr 320px;
+          gap: 20px;
+          align-items: start;
+        "
+      >
+        <!-- ==== Skills ==== -->
+        <section
+          id="skills"
+          aria-labelledby="skills-heading"
+          style="
+            background:lightcyan;
+            padding: 16px;
+            border-radius: 10px;
+            box-shadow: 0 6px 4px lightgreen;
+          "
+        >
+          <h2 id="skills-heading" style=" font-size: 20px; margin: 0 0 10px;">
+            Skills
+          </h2>
+          <h3 style="font-size: 1px; margin: 0 0 8px">Frontend</h3>
+          <ul style="padding-left: 20px; color: #333; margin: 0 0 11px">
+            <li><b>Web Development:</b> Build fast, scalable, and secure web applications using HTML, CSS, JavaScript, React, Nedo, PHP Script, Vue.js, and more</li>
+            <li><b>Database Management: </b>Design, develop, and optimize databases using MySQL, MongoDB, PostgreSQL, Firebase and more.</li>
+          </ul>
+        </section>
+
+        <!-- ===Quick Contact=== -->
+        <aside
+          aria-labelledby="aside-heading"
+          style="
+            background: lightcyan;
+            padding: 14px;
+            border-radius: 9px;
+            box-shadow: 0 6px 4px lightgreen;
+          "
+        >
+          <h2 id="aside-heading" style="font-size: 18px; margin: 0 0 10px">
+            Quick Info
+          </h2>
+          <p style="margin: 0 0 8px; color: #333">
+            Location: Abeokuta, Ogun State, Nigeria
+          </p>
+          <p style="margin: 0 0 8px; color: #333">
+            Open to: Remote & Hybrid work
+          </p>
+          <p style="margin: 0 0 12px; color: #333">
+            Download resume:
+            <a href="#" style="color: blue; text-decoration: none">PDF</a>
+          </p>
+
+          <h3 style="font-size: 14px; margin: 8px 0">Contact</h3>
+          <p style="margin: 0; color: #333; font-size: 15px">
+            <strong>Email:</strong>
+            <a
+              href="mailto:indexprolific@gmail.com"
+              style="color: blue; text-decoration: none"
+              >indexprolific@gmail.com</a
+            >
+          </p>
+          <p style="margin: 8px 0 0; color: #333; font-size: 14px">
+            <strong>Whatsapp:</strong>
+            <a href="https://wa.me/2348133274250" target="_blank" style="color: blue; margin: 0 10px; text-decoration: none;">
+        Chat with us
+      </a>
+          </p>
+        </aside>
+      </div>
+
+      <!-- ====CONTACT FORM==== -->
+      <section
+        id="contact"
+        aria-labelledby="contact-heading"
+        style="
+          margin-top: 18px;
+          background: lightcyan;
+          padding: 15px;
+          border-radius: 9px;
+          border: 1px solid cyan;
+          box-shadow: 0 6px 4px lightgreen;
+         
+        "
+      >
+        <h2 id="contact-heading" style="font-size: 2.0rem; margin:0; text-align: center;">
+          Contact Us
+        </h2>
+        <p style="margin: 0 0 12px; color: #374151; text-align: center;">
+          Cantact Us for More Information!
+        </p>
+
+        <form
+           style="
+            display: flex;
+            flex-direction:column;
+            gap: 11px;
+            max-width: 700px;
+          "
+        >
+          <!-- Name -->
+          <label for="" style="font-weight:500 ;">Fullname</label>
+          <input
+            type="text"
+            required
+
+            style="padding: 11px; border-radius: 7px; border: 1px solid lightgreen"
+          />
+
+          <!-- Email -->
+          <label for="" style="font-weight:500">Email address</label>
+          <input
+            type="email"
+            required
+            style="padding: 11px; border-radius: 7px; border: 1px solid lightgreen"
+          />
+
+          <!-- Phone with pattern (advanced) -->
+          <label for="phone" style="font-weight: 600">Phone</label>
+          <input
+            type="text"
+            style="padding: 11px; border-radius: 7px; border: 1px solid lightgreen"
+          />
+
+          <!-- Message -->
+          <label for="message" style="font-weight: 600">Message</label>
+          <textarea
+            rows="6"
+            required
+            minlength="25"
+            placeholder="Please, meet me!"
+            style="padding: 11px; border-radius: 7px; border: 1px solid lightgreen"
+          ></textarea>
+
+          <!-- Consent checkbox -->
+          <label
+            for="consent"
+            style="
+              display: flex;
+              gap: 10px;
+              align-items: center;
+              font-size: 15px;
+            "
+          >
+            <input
+              id="consent"
+              name="consent"
+              type="checkbox"
+              required
+              aria-required="true"
+              style="width: 18px; height: 18px"
+            />
+            I accept to receive a reply to this request (required)
+          </label>
+
+          <!-- Submit -->
+          <div style="display: flex; gap: 12px; align-items: center">
+            <button
+              type="submit"
+              style="
+                background: #0f1724;
+                color: #fff;
+                padding: 12px 16px;
+                border-radius: 8px;
+                border: none;
+                cursor: pointer;
+                font-weight: 600;
+              "
+            >
+              Send Message
+            </button>
+            <button
+              type="reset"
+              style="
+                background: white;
+                color: #333;
+                padding: 9px 15px;
+                cursor: pointer;
+                border-radius: 7px;
+                border: 1px solid lightcoral;
+                
+              "
+            >
+              Reset
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      style="background: #333; color: white; padding: 9px"
+    >
+      <div
+        style="
+          max-width: 1100px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+        "
+      >
+        <p style="margin: 0; font-size: 14px; text-align: center;">
+          © <span id="year"></span> <b><a style="color: gold; text-decoration: none;" href="https://github.com/mcprolific"> Saka Idris Ajayi</a> </b> || Built with semantic <b style="color: gold;">HTML</b> and
+          inline <b style="color: gold;">CSS</b>.
+        </p>
+        <nav style="text-align: center;" aria-label="Footer">
+          <a
+            href="#projects"
+            style="color: gold; text-decoration: none; margin-right: 12px"
+            >Projects</a
+          >|
+          <a
+            href="#skills"
+            style="color: gold; text-decoration: none; margin-right: 12px"
+            >Skills</a
+          >|
+          <a href="#contact" style="color: gold; text-decoration: none"
+            >Contact</a
+          >
+        </nav>
+      </div>
+    </footer>
+
+    <!-- Small inline script for enhanced validation & UX -->
+    <script>
+      // set footer year
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      (function () {
+        const form = document.getElementById("contactForm");
+        const msg = document.getElementById("formMessage");
+
+        function validateField(field) {
+          // built-in validity check + custom minlength check for textarea
+          if (!field.checkValidity()) {
+            return field.validationMessage || "Invalid value";
+          }
+          if (field.tagName.toLowerCase() === "textarea") {
+            const min = parseInt(field.getAttribute("minlength") || 0, 10);
+            if (min && field.value.trim().length < min) {
+              return "Please enter at least " + min + " characters.";
+            }
+          }
+          return "";
+        }
+
+        form.addEventListener(
+          "submit",
+          function (e) {
+            e.preventDefault(); // handle validation before sending
+            msg.textContent = "";
+
+            const elements = Array.from(form.elements).filter(
+              (el) =>
+                el.tagName.toLowerCase() !== "button" && el.type !== "reset"
+            );
+
+            for (const el of elements) {
+              const err = validateField(el);
+              if (err) {
+                // focus first invalid
+                el.focus();
+                msg.textContent = err;
+                // visually highlight invalid element
+                el.style.outline = "3px solid rgba(220,38,38,0.15)";
+                setTimeout(() => (el.style.outline = ""), 3000);
+                return;
+              }
+            }
+
+            // If all valid: simulate submit (replace with actual send)
+            msg.style.color = "#16a34a";
+            msg.textContent =
+              "Thanks! Your message was validated and (simulated) sent.";
+            setTimeout(() => {
+              msg.textContent = "";
+              msg.style.color = "#dc2626";
+              form.reset();
+            }, 3000);
+          },
+          false
+        );
+      })();
+    </script>
+  </body>
+</html>
