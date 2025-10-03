@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Counter With Resest</title>
+</head>
+
+<body>
+    <p id="visitMessage"></p>
+    <p id="firstVisit"></p>
+    <button id="resetBtn">Reset Counter</button>
+
+    <script>
+        let count = localStorage.getItem("visitCount");
+        let first = localStorage.getItem("firstVisit");
+
+        if (count) {
+            count = parseInt(count) + 1;
+            localStorage.setItem("visitCount", count);
+        } else {
+            count = 1;
+            localStorage.setItem("visitCount", count);
+            let now = new Date().toLocaleString();
+            localStorage.setItem("firstVisit", now);
+            first = now;
+        }
+
+        document.getElementById("visitMessage").innerHTML = "You have visited " + count + " times";
+        document.getElementById("firstVisit").innerHTML = "First visit: " + first;
+
+        document.getElementById("resetBtn").onclick = function () {
+            localStorage.removeItem("visitCount");
+            localStorage.removeItem("firstVisit");
+            location.reload();
+        };
+
+    </script>
+
+
+</body>
+
+</html>

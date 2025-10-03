@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Report Card</title>
+</head>
+
+<body>
+    <div>
+        <h2>Student Report Card</h2>
+        <pre id="output2"></pre>
+    </div>
+
+    <script>
+        // 1. Define the Student class
+        class Student {
+            constructor(name, age, grades) {
+                this.name = name;
+                this.age = age;
+                this.grades = grades; // array of numbers
+            }
+
+            // 2. Calculate average grade
+            calculateAverage() {
+                let sum = 0;
+                for (let grade of this.grades) {
+                    sum += grade;
+                }
+                return (sum / this.grades.length).toFixed(2); // 2 decimal places
+            }
+
+            // 3. Get student details
+            getDetails() {
+                const avg = this.calculateAverage();
+                const status = avg < 50 ? " Failed" : " Passed";
+                return `Name: ${this.name}, Age: ${this.age}, Average: ${avg} → ${status}`;
+            }
+        }
+
+        // Create some Student objects
+        const student1 = new Student("Alice", 16, [80, 70, 90]);
+        const student2 = new Student("Bob", 17, [40, 35, 50]);
+
+        // Show results
+        let output2Text = "";
+        output2Text += student1.getDetails() + "\n";
+        output2Text += student2.getDetails() + "\n";
+
+        document.getElementById("output2").textContent = output2Text;
+
+
+
+    </script>
+
+</body>
+
+</html>

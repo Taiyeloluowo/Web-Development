@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Theme Switcher with Persistence</title>
+</head>
+
+<body>
+
+    <div>
+        <button id="lightBtn">Light Mode</button>
+        <button id="darkBtn">Dark Mode</button>
+        <button id="blueBtn">Blue Mode</button>
+    </div>
+
+    <script>
+        let saved = localStorage.getItem("theme");
+
+        if (saved === "light") {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+        }
+
+        if (saved === "dark") {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+        }
+
+        if (saved === "blue") {
+            document.body.style.backgroundColor = "blue";
+            document.body.style.color = "#b9d0e4ff";
+        }
+
+        document.getElementById("lightBtn").onclick = function () {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+            localStorage.setItem("theme", "light");
+        };
+
+        document.getElementById("darkBtn").onclick = function () {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+            localStorage.setItem("theme", "dark");
+        };
+
+        document.getElementById("blueBtn").onclick = function () {
+            document.body.style.backgroundColor = "#cce6ff";
+            document.body.style.color = "#003366";
+            localStorage.setItem("theme", "blue");
+        };
+
+
+    </script>
+</body>
+
+</html>

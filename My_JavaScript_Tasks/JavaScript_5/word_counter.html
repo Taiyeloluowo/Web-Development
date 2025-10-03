@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Counter</title>
+</head>
+
+<body>
+    <div class="main">
+        <p>Word Counter</p>
+        <textarea name="text" id="txtArea" onkeyup="wordCounter()">JavaScript Practice Exercise 5 - Task 2 - You can type here!</textarea>
+
+        <p id="showCount"></p>
+    </div>
+
+    <script>
+        function wordCounter() {
+            let txt = document.getElementById("txtArea").value;
+
+            // Count characters
+            let charCount = txt.length;
+
+            // Removes any spaces at the beginning or end of the text.
+            // Splits the string into an array of words based on spaces
+            // Removes empty strings ("") from the array (caused by extra spaces).
+            let words = txt.trim().split(" ").filter(i => i !== "");
+            let wordCount = words.length;
+
+            // Update counter text
+            let counter = document.getElementById("showCount");
+            counter.textContent = "Characters: " + charCount + " | Words: " + wordCount;
+
+            // Change to red 
+            if (charCount > 200) {
+                counter.classList.add("warning");
+            } else {
+                counter.classList.remove("warning");
+            }
+        }
+
+    </script>
+</body>
+
+</html>

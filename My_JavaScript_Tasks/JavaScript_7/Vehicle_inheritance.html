@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle inheritance</title>
+</head>
+
+<body>
+
+    <div>
+        <h2>Vehicle inheritance</h2>
+        <pre id="output3"></pre>
+    </div>
+
+    <script>
+
+
+        // 1. Base class Vehicle
+        class Vehicle {
+            constructor(brand, model, year) {
+                this.brand = brand;
+                this.model = model;
+                this.year = year;
+            }
+
+            // Method to get vehicle info
+            getInfo() {
+                return `Vehicle: ${this.brand} ${this.model} (${this.year})`;
+            }
+
+            // Challenge: Check if vehicle is old
+            isOld() {
+                const currentYear = new Date().getFullYear();
+                return (currentYear - this.year) > 10;
+            }
+        }
+
+        // 2. Car class extending Vehicle
+        class Car extends Vehicle {
+            constructor(brand, model, year, fuelType) {
+                super(brand, model, year); // call parent constructor
+                this.fuelType = fuelType;
+            }
+
+            // Override getInfo to include fuelType
+            getInfo() {
+                return `Car: ${this.brand} ${this.model} (${this.year}), Fuel: ${this.fuelType}`;
+            }
+        }
+
+        // Create objects
+        const vehicle1 = new Vehicle("Toyota", "Corolla", 2005);
+        const car1 = new Car("Tesla", "Model 3", 2021, "Electric");
+        const car2 = new Car("Honda", "Civic", 2010, "Petrol");
+
+        // Display results
+        let output3 = "";
+        output3 += vehicle1.getInfo() + ` : Old? ${vehicle1.isOld()}\n`;
+        output3 += car1.getInfo() + ` : Old? ${car1.isOld()}\n`;
+        output3 += car2.getInfo() + ` : Old? ${car2.isOld()}\n`;
+
+        document.getElementById("output3").textContent = output3;
+
+
+    </script>
+
+</body>
+
+</html>

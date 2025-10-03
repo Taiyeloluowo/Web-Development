@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart with Classes</title>
+ </head>
+
+<body>
+
+    <h2>Shopping Cart with Classes</h2>
+    <pre id="output4"></pre>
+    </div>
+
+    <script>
+        // 1. Product class
+        class Product {
+            constructor(name, price) {
+                this.name = name;
+                this.price = price;
+            }
+        }
+
+        // 2. Cart class
+        class Cart {
+            constructor() {
+                this.items = []; // array of {product, quantity}
+            }
+
+            // Add product with quantity
+            addProduct(product, quantity) {
+                this.items.push({ product, quantity });
+            }
+
+            // Remove product by name
+            removeProduct(productName) {
+                this.items = this.items.filter(item => item.product.name !== productName);
+            }
+
+            // Get total price
+            getTotal() {
+                let total = 0;
+                for (let item of this.items) {
+                    total += item.product.price * item.quantity;
+                }
+
+                // Challenge: Free shipping if above 100
+                if (total > 100) {
+                    return `Total: ₦${total} : Free Shipping!`;
+                }
+                return `Total: ₦${total}`;
+            }
+        }
+
+        // --- Example Usage ---
+        const cart = new Cart();
+
+        const prod1 = new Product("Bread", 20);
+        const prod2 = new Product("Milk", 50);
+        const prod3 = new Product("Eggs", 40);
+
+        cart.addProduct(prod1, 2); // 2 breads = 40
+        cart.addProduct(prod2, 1); // 1 milk = 50
+        cart.addProduct(prod3, 3); // 3 eggs = 120
+
+        let output4 = "";
+        output4 += "Cart Items:\n";
+        for (let item of cart.items) {
+            output4 += `${item.product.name} (₦${item.product.price}) * ${item.quantity}\n`;
+        }
+        output4 += "\n" + cart.getTotal() + "\n";
+
+        // Remove Milk
+        cart.removeProduct("Milk");
+        output4 += "\nAfter removing Milk:\n";
+        for (let item of cart.items) {
+            output4 += `${item.product.name} (₦${item.product.price}) * ${item.quantity}\n`;
+        }
+        output4 += "\n" + cart.getTotal();
+
+        document.getElementById("output4").textContent = output4;
+
+    </script>
+</body>
+
+</html>

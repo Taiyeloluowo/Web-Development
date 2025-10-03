@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Persistent Notes App</title>
+   
+</head>
+
+<body>
+
+    <textarea id="noteArea" rows="6" cols="40" placeholder="Type your note here..."></textarea><br><br>
+    <button id="saveBtn">Save Note</button>
+    <button id="loadBtn">Load Note</button>
+    <p id="savedTime"></p>
+
+</body>
+
+</html>
+
+<script>
+    document.getElementById("saveBtn").onclick = function () {
+        let note = document.getElementById("noteArea").value;
+        let time = new Date().toLocaleString();
+        localStorage.setItem("note", note);
+        localStorage.setItem("savedAt", time);
+    };
+
+    document.getElementById("loadBtn").onclick = function () {
+        let savedNote = localStorage.getItem("note");
+        let savedTime = localStorage.getItem("savedAt");
+        document.getElementById("noteArea").value = savedNote;
+        document.getElementById("savedTime").innerHTML = "Last saved at: " + savedTime;
+    };
+
+</script>
+</body>
+
+</html>
