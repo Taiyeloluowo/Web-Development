@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto-Save Draft</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    textarea {
+      width: 500px;
+      height: 200px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+      resize: none;
+      font-family: "Courier New", monospace;
+    }
+
+    .status {
+      margin-top: 15px;
+      font-size: 14px;
+      color: #bde0fe;
+    }
+  </style>
+</head>
+<body>
+  <h1>📝 Auto-Save Draft</h1>
+  <textarea id="draft" placeholder="Start typing your notes..."></textarea>
+  <p class="status" id="statusMsg">No draft saved yet.</p>
+
+  <script>
+    const textarea = document.getElementById("draft");
+    const statusMsg = document.getElementById("statusMsg");
+
+    // Load saved draft on page load
+    const savedText = localStorage.getItem("autoDraft");
+    if (savedText) {
+      textarea.value = savedText;
+      statusMsg.textContent = "✅ Draft restored from last session.";
+    }
+
+    // Function to save draft and show timestamp
+    function saveDraft() {
+      const text = textarea.value;
+      localStorage.setItem("autoDraft", text);
+
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      statusMsg.textContent = `💾 Draft saved at ${time}`;
+    }
+
+    // Auto-save every 5 seconds
+    setInterval(saveDraft, 5000);
+  </script>
+</body>
+</html>

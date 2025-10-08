@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delayed Joke with Promises</title>
+</head>
+
+<body>
+    <div>
+        <h2>Click to get joke</h2>
+        <button id="jokeBtn">Tell me a joke</button>
+        <p id="output"></p>
+
+
+        <script>
+            function tellJoke() {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        resolve("Here’s a funny joke!");
+                    }, 3000);
+                });
+            }
+
+            const jokeBtn = document.getElementById("jokeBtn");
+            const output = document.getElementById("output");
+
+            jokeBtn.addEventListener("click", () => {
+                output.textContent = "Thinking of a joke... ";
+
+                tellJoke()
+                    .then((message) => {
+                        output.textContent = message;
+                    });
+            });
+        </script>
+</body>
+
+</html>

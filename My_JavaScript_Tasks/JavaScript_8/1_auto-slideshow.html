@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Auto Slideshow</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #232526, #414345);
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .slideshow-container {
+      width: 600px;
+      height: 350px;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    }
+
+    .slideshow-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .controls {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #00b4d8;
+      border: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      border-radius: 8px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0096c7;
+    }
+  </style>
+</head>
+<body>
+  <div class="slideshow-container">
+    <img id="slide" src="https://picsum.photos/id/1015/600/350" alt="Slideshow image">
+  </div>
+
+  <div class="controls">
+    <button id="pauseBtn">Pause</button>
+    <button id="resumeBtn">Resume</button>
+  </div>
+
+  <script>
+    // Array of image URLs
+    const images = [
+      "https://picsum.photos/id/1015/600/350",
+      "https://picsum.photos/id/1025/600/350",
+      "https://picsum.photos/id/1035/600/350",
+      "https://picsum.photos/id/1045/600/350",
+      "https://picsum.photos/id/1055/600/350"
+    ];
+
+    let index = 0;
+    const slide = document.getElementById("slide");
+    let slideshowInterval;
+
+    // Function to show next image
+    function nextImage() {
+      index = (index + 1) % images.length; // Loop back to start
+      slide.style.opacity = 0;
+      setTimeout(() => {
+        slide.src = images[index];
+        slide.style.opacity = 1;
+      }, 500);
+    }
+
+    // Start slideshow
+    function startSlideshow() {
+      slideshowInterval = setInterval(nextImage, 3000);
+    }
+
+    // Pause slideshow
+    function pauseSlideshow() {
+      clearInterval(slideshowInterval);
+    }
+
+    // Event listeners
+    document.getElementById("pauseBtn").addEventListener("click", pauseSlideshow);
+    document.getElementById("resumeBtn").addEventListener("click", startSlideshow);
+
+    // Start automatically
+    startSlideshow();
+  </script>
+</body>
+</html>

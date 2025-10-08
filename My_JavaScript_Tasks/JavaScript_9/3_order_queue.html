@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process an order queue</title>
+</head>
+
+<body>
+    <div id="output">
+        <h2>Process an order queue</h2>
+        <button id="startBtn">Start Orders</button>
+    </div>
+
+    <script>
+
+        const orders = ["Coffee", "Cake", "Juice"];
+        const output = document.getElementById("output");
+        const button = document.getElementById("startBtn");
+
+
+        function prepareOrder(order) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve(`✅ ${order} ready`);
+                }, 2000);
+            });
+        }
+
+        async function processOrders() {
+            output.innerHTML = "Processing orders...<br><br>";
+
+            for (const order of orders) {
+                const message = await prepareOrder(order);
+                output.innerHTML += message + "<br>";
+            }
+
+            output.innerHTML += "<br> All orders completed!";
+        }
+
+
+        button.addEventListener("click", processOrders);
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Effect</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: #fff;
+      font-family: "Courier New", monospace;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    p {
+      font-size: 22px;
+      min-height: 30px;
+      border-right: 3px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+
+    /* blinking animation */
+    .blink {
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 50%, 100% {
+        opacity: 1;
+      }
+      25%, 75% {
+        opacity: 0;
+      }
+    }
+
+    button {
+      margin-top: 30px;
+      background-color: #00b4d8;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #0096c7;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Typing Effect Exercise</h1>
+  <p id="text"></p>
+  <button id="restartBtn">Restart Typing</button>
+
+  <script>
+    const textElement = document.getElementById("text");
+    const message = "Welcome to JavaScript Timers!";
+    const restartBtn = document.getElementById("restartBtn");
+    let index = 0;
+    let typingTimeout;
+
+    // Function to type one character at a time
+    function typeText() {
+      if (index < message.length) {
+        textElement.textContent += message.charAt(index);
+        index++;
+        typingTimeout = setTimeout(typeText, 100); // delay per character
+      } else {
+        textElement.classList.add("blink"); // start blinking after typing ends
+      }
+    }
+
+    // Function to restart typing
+    function restartTyping() {
+      clearTimeout(typingTimeout);
+      textElement.textContent = "";
+      textElement.classList.remove("blink");
+      index = 0;
+      typeText();
+    }
+
+    // Start typing automatically
+    typeText();
+
+    // Restart button listener
+    restartBtn.addEventListener("click", restartTyping);
+  </script>
+</body>
+</html>
